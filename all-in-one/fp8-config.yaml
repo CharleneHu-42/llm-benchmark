@@ -1,0 +1,32 @@
+repo_id:
+  #  - 'THUDM/chatglm-6b'
+  #  - 'meta-llama/Llama-2-7b-chat-hf'
+  #  - 'meta-llama/Llama-2-13b-chat-hf'
+  #  - 'meta-llama/Llama-2-70b-chat-hf'
+  #- 'EleutherAI/gpt-j-6B'
+  - 'facebook/opt-6.7b'
+  - 'facebook/opt-30b'
+  #  - 'tiiuae/falcon-7b-instruct'
+  #- 'tiiuae/falcon-40b-instruct'
+  #  - 'THUDM/chatglm2-6b'
+local_model_hub: ''
+warm_up: 2
+num_trials: 3
+num_beams: 1 # default to greedy search
+low_bit: 'fp8' # default to use 'sym_int4' (i.e. symmetric int4)
+in_out_pairs:
+  - '32-32'
+  - '1024-128'
+    #- '1024-1024'
+  - '2048-256'
+    #- '2048-2048'
+test_api:
+  #  - "transformer_int4"
+  #  - "native_int4"
+  #  - "optimize_model"
+  #  - "pytorch_autocast_bf16"
+  # - "ipex_fp16_gpu" # on Intel GPU
+  - "transformer_int4_gpu"  # on Intel GPU
+  # - "optimize_model_gpu"  # on Intel GPU
+  # - "deepspeed_transformer_int4_cpu" # on Intel SPR Server
+
