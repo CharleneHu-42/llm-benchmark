@@ -1,0 +1,5 @@
+--find-links https://developer.intel.com/ipex-whl-stable-xpu
+bigdl-llm[xpu]==2.4.0b20231107
+omegaconf
+pandas
+einops
