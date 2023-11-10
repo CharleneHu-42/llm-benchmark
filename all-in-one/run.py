@@ -345,7 +345,7 @@ def run_transformer_int4_gpu(repo_id,
                                                      use_cache=True)
         tokenizer = LlamaTokenizer.from_pretrained(model_path, trust_remote_code=True)
         model = model.to('xpu')
-    elif repo_id in ['databricks/dolly-v1-6b', 'EleutherAI/gpt-j-6B']:
+    elif repo_id in ['databricks/dolly-v1-6b', 'EleutherAI/gpt-j-6B', 'EleutherAI/gpt-j-6b']:
         model = AutoModelForCausalLM.from_pretrained(model_path, optimize_model=True, load_in_low_bit=low_bit,
                                                      trust_remote_code=True, use_cache=True, n_positions=4096)
         tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
