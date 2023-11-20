@@ -1,0 +1,25 @@
+repo_id:
+  #  - 'THUDM/chatglm-6b'
+  #  - 'THUDM/chatglm2-6b'
+  - 'meta-llama/Llama-2-7b-chat-hf'
+    #- 'meta-llama/Llama-2-13b-chat-hf'
+  #- 'meta-llama/Llama-2-70b-chat-hf'
+  #- 'project-baize/merged-baize-30b'
+  #- 'Qwen/Qwen-7B-Chat'
+local_model_hub: '/home/user/models'
+warm_up: 1
+num_trials: 1
+num_beams: 1 # default to greedy search
+low_bit: 'sym_int4' # default to use 'sym_int4' (i.e. symmetric int4)
+in_out_pairs:
+  #- '32-32'
+  - '1024-128'
+  #- '2048-256'
+test_api:
+  - "transformer_int4"
+    #  - "native_int4"
+    #  - "optimize_model"
+    #  - "pytorch_autocast_bf16"
+  # - "ipex_fp16_gpu" # on Intel GPU
+  # - "transformer_int4_gpu"  # on Intel GPU
+  # - "optimize_model_gpu"  # on Intel GPU

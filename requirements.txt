@@ -1,0 +1,9 @@
+--index-url https://download.pytorch.org/whl/cpu
+torch==2.1.0
+bigdl-llm[all]==2.4.0b20231031
+bigdl-nano==2.4.0b20231031
+omegaconf
+pandas
+transformers_stream_generator
+einops
+tiktoken
