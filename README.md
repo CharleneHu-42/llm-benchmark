@@ -12,6 +12,6 @@ Edit `all-in-one/config.yaml` according to test requirements
     cd all-in-one
 	source bigdl-llm-init -t
 	export OMP_NUM_THREADS=$cores
-	numactl -C $[numa_node*cores]-$[numa_node*cores+cores-1] -m $numa_node python run.py
+	numactl -C $[numa_node*cores]-$[numa_node*cores_per_node+cores-1] -m $numa_node python run.py
 
 Note that `<cores>` and `<numa_node>` corresponds to core number and numa node we want to run on. 
