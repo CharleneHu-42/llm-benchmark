@@ -5,13 +5,13 @@ cores=$1
 jemalloc_enable=t
 current_date=$(date +%F)
 if [[ $jemalloc_enable == "0" ]]; then
-    source bigdl-nano-init -c
+    source bigdl-llm-init -c
     log=../logs/transformers/output-$current_date.log
 elif [[ $jemalloc_enable == "t" ]]; then
-    source bigdl-nano-init -t
+    source bigdl-llm-init -t
     log=../logs/transformers/tcmalloc-$cores-core-output-$current_date.log
 else
-    source bigdl-nano-init #-d
+    source bigdl-llm-init #-d
     log=../logs/transformers/jemalloc-output-$current_date.log
 fi
 export OMP_NUM_THREADS=$cores
